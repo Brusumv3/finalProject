@@ -27,6 +27,18 @@ void main() {
 
 	
 	System.out.println("\nYour estimated maintenance calories: " +(int)maint);
+
+	int[] calories = {250,500, 750, 1000};
+	String[] gainorLose = {"0.5 lbs/week","1.0 lbs/week","1.5 lbs/week","2.0 lbs/week"};
+	System.out.println("\nTo lose:");
+	for(int i = 0; i < calories.length; i++){
+		System.out.println(gainorLose[i] + ": " + (int) (maint - calories[i]));
+	}
+	System.out.println("\nTo gain");
+	for(int j = 0;j < calories.length;j++) {
+		System.out.println(gainorLose[j] + ": " + (int) (maint + calories[j]));
+	}
+
 }
 private static double calculateMaintenance(double weightLbs, double heightInch, int age, String gender) {
 	double weightKg = weightLbs / 2.205;
