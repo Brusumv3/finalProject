@@ -1,6 +1,7 @@
 import java.util.*;
 public class NutritionCalculator{
 void main() {
+
 	Scanner scan = new Scanner(System.in);
 	System.out.print("Please enter your age (Years): ");
 	int age = scan.nextInt();
@@ -40,7 +41,7 @@ void main() {
 	}
 
 }
-private static double calculateMaintenance(double weightLbs, double heightInch, int age, String gender) {
+private static double calculateMaintenance(double weightLbs, double heightInch, int age, String gender) { // This method wasn't too hard to write. All it does is take the users info and returns the maintenance based from the Mifflin formula.
 	double weightKg = weightLbs / 2.205;
 	double heightcm = heightInch * 2.54;
 	if(gender.equalsIgnoreCase("M")) {
@@ -53,7 +54,7 @@ private static double calculateMaintenance(double weightLbs, double heightInch, 
 		return(10 *weightKg) + 	(6.25 * heightcm) - (5 * age) 	+ 5;
 	}
 }
-private static double switchActivityMultiplier(int lvl){
+private static double switchActivityMultiplier(int lvl){ // This part took FOREVER to figure out. But it is the method that takes the activity level and will return the multiplier for the equation in order to calculate the calories.
 	switch (lvl) {
 		case 1: return 1.2;
 		case 2: return 1.375;
